@@ -1,0 +1,27 @@
+/* button styles */
+
+.buttonList
+	list-style: none
+	li
+		display: inline-block
+
+%button-style
+	padding: .75em 1.875em 
+	display: inline-block
+	border: 1px solid rgba(128,128,128,.4)
+	border-radius: 4px
+	font-size: .8em
+	font-family: inherit
+
+button
+	@extend %button-style
+	color: #222
+	background-color: #eee
+
+.button
+	@extend button
+	
+.button-cta
+	@extend %button-style
+	color: #fff
+	background-color: #37a

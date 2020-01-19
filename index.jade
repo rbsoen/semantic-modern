@@ -1,0 +1,187 @@
+doctype html
+html(lang="en")
+	head
+		title Elements
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,height=device-height,initial-scale=1")
+		link(rel="stylesheet", media="screen,tv", type="text/css", href="screen.css")
+		// quick font cdn, sorry
+		link(rel="stylesheet", media="all", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+		link(rel="stylesheet", media="all", href="https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css")
+	body
+		nav#mainNav
+			h1
+				a(href="#") 2020chic
+			// hamburger menu trickery. hidden from semantic view, shown with css
+			label(for="toggleHamburger", hidden) &#9776;
+			input#toggleHamburger(type="checkbox", hidden)
+			ul#mainMenu
+				li
+					a(href="#basic-elements") Components
+				li
+					a(href="#") Download
+				li
+					a(href="#", title="Twitter")
+						i.fa.fa-twitter
+						span.menuExpanded Twitter
+						
+				li
+					a(href="#", title="Facebook")
+						i.fa.fa-facebook
+						span.menuExpanded Facebook
+						
+				li
+					a(href="#", title="Instagram")
+						i.fa.fa-instagram
+						span.menuExpanded Instagram
+		
+		section#hero
+			.background-overlay
+			.section-container
+				h2 Semantic Modern Kit
+				p Let's keep it simple. No popular frameworks, (almost) handwritten code.
+					|  You could use plain HTML + CSS or use preprocessors. In my case, it's
+					| Jade (HTML) and Sass (CSS)
+				a.button(href="#")
+					| Get Started
+		
+		section#basic-elements
+			.section-container
+				h2 Basic Elements
+				
+				h3 Buttons
+				p Pick your poison.
+				ul.buttonList
+					li
+						a.button(href="#")
+							span
+								i.fa.fa-bolt
+								|  Link Button
+					li
+						a.button-cta(href="#")
+							span
+								i.fa.fa-heart
+								|  CTA Link Button
+					li
+						button
+							| Action Button
+					li
+						button.button-cta
+							| Focused Action Button
+				
+				h3 Forms
+				
+				h4 Inputs
+				.row
+					.column
+						label
+							input(type="text", placeholder="Don't put text on a placeholder!")
+							div.floating-disclaimer
+								| Floating disclaimer. Make sure there's enough space.
+						p
+							| Instead, place it on a <code>.floating-placeholder</code>.
+							| Make sure there's enough space on the top.
+				
+					.column
+						label(for="inputFloaty")
+							input#inputFloaty(type="text", placeholder=" ")
+							span.floating-placeholder
+								| Input without "disclaimer"
+						
+						label(for="inputFloaty2")
+							input#inputFloaty2(type="text", placeholder=" ")
+							span.floating-placeholder
+								| Floating input with "disclaimer"
+							div.floating-disclaimer
+								| Don't make this too long or it'll overflow.
+							
+				h4 Checkboxes
+				.row
+					.column
+						label(for="chk1")
+							input#chk1(type="checkbox")
+							span Tick this
+						label(for="chk2")
+							input#chk2(type="checkbox", checked)
+							span Untick this
+					.column
+						label(for="chk3")
+							input#chk3(type="checkbox", disabled)
+							span Can't tick this
+						label(for="chk4")
+							input#chk4(type="checkbox", disabled, checked)
+							span Can't untick this
+				
+				//
+					h4 Radio Buttons
+					.inputContainer
+						label(for="rd1") Tick this
+						input#chk1(type="radio", name="testRadio")
+					.inputContainer
+						label(for="rd2") Untick this
+						input#chk2(type="radio", name="testRadio", checked)
+					.inputContainer
+						label(for="rd3") Can't tick this
+						input#chk3(type="radio", name="testRadio", disabled)
+					.inputContainer
+						label(for="rd4") Can't untick this
+						input#chk4(type="radio", name="testRadio", disabled, checked)
+					
+					h4 Toggle Buttons
+					.inputContainer
+						label(for="chk4") Tick this
+						input.toggleButton#chk4(type="checkbox")
+					.inputContainer
+						label(for="chk5") Untick this
+						input.toggleButton#chk5(type="checkbox", checked)
+					.inputContainer
+						label(for="chk6") Can't tick this
+						input.toggleButton#chk6(type="checkbox", disabled)
+					.inputContainer
+						label(for="chk7") Can't untick this
+						input.toggleButton#chk7(type="checkbox", disabled, checked)
+		section#lorem-ipsum
+			.section-container
+				h2 Lorem Ipsum
+				p Dolor sit amet.
+				p
+					| Consectetur adipiscing elit. Aliquam quam ligula, fringilla non eros ut, imperdiet porta dui. Duis lectus est, auctor quis tortor in, maximus rutrum nibh. Pellentesque laoreet auctor lacus in pellentesque. Nulla vitae arcu iaculis, accumsan justo et, accumsan risus. Nulla vehicula cursus elit eget tincidunt. Nam sodales egestas urna, nec consequat eros accumsan nec. Phasellus sed sollicitudin nunc. Sed id elit vitae metus tincidunt ornare ac eu turpis. Vestibulum pulvinar erat nec tristique pretium. Sed rhoncus accumsan ultricies. 
+				p
+					| Duis venenatis pretium leo. Pellentesque finibus auctor est sit amet molestie. Donec id est in mauris efficitur vestibulum placerat a arcu. Mauris ligula mauris, dignissim a mauris ac, suscipit feugiat dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat eu dui a imperdiet. Cras in mi elementum dui vehicula consectetur ac eu leo. Fusce ultrices non eros at pharetra. Phasellus id magna at ex egestas convallis.
+				blockquote
+					p
+						| There's no one who dislikes pleasure itself just because it's pleasure, but
+						| because of the painful consequences suffered by those who doesn't know how
+						| to pursue it.
+					p
+						| Conversely, no one loves or wants pain just because it's pain,
+						| but because pain can sometimes be rewarding.
+						| Consider this: do you work out just to feel the pain of working
+						| out? No, because you want to see yourself be fit.
+					p
+						| Then again, what's wrong with someone trying to have fun
+						| and not face consequences, or someone who gets away from
+						| meaningless pain?
+					footer
+						| Cicero, wrongly quoted.
+					
+		script(type="text/javascript")
+			|	// noscript will not inhibit page functionality
+			|	var scroll = false;
+			|   var scrollLevel = 0
+			|	var nav = document.getElementById("mainNav");
+			|	nav.classList.add("topofpage");
+			|	window.onscroll = function(){
+			|		scroll = true;
+			|   }
+			|   setInterval( function() {
+			|		scrollLevel = window.scrollY;
+			|		if ( scroll ) {
+			|			if ( scrollLevel >= 10 ){
+			|				nav.classList.remove("topofpage");
+			|			} else {
+			|				nav.classList.add("topofpage");
+			|			}
+			|		}
+			|		scroll = false;
+			|   }, 250);

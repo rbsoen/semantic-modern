@@ -1,0 +1,170 @@
+doctype html
+html(lang="id")
+	head
+		title Elements
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,height=device-height,initial-scale=1")
+		link(rel="stylesheet", media="screen,tv", type="text/css", href="screen.css")
+		// maaf pakai cdn + webfont, pengen cepet kelar
+		link(rel="stylesheet", media="all", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+		link(rel="stylesheet", media="all", href="https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css")
+	body
+		nav#mainNav
+			h1
+				a(href="#") 2020chic
+			// ribet ya bikin hamburger menu
+			label(for="toggleHamburger", hidden) &#9776;
+			input#toggleHamburger(type="checkbox", hidden)
+			ul#mainMenu
+				li
+					a(href="#basic-elements") Komponen
+				li
+					a(href="#") Download
+				li
+					a(href="#", title="Twitter")
+						i.fa.fa-twitter
+						span.menuExpanded Twitter
+						
+				li
+					a(href="#", title="Facebook")
+						i.fa.fa-facebook
+						span.menuExpanded Facebook
+						
+				li
+					a(href="#", title="Instagram")
+						i.fa.fa-instagram
+						span.menuExpanded Instagram
+		
+		section#hero
+			.background-overlay
+			.section-container
+				h2 Semantik dan Modern
+				p Simpel aja, nggak perlu ribet-ribet pakai framework atau scripting.
+					| Bisa langsung HTML + CSS atau pake preprocessor (Jade + Sass).
+				a.button(href="#")
+					| Yuk Ikutan
+		
+		section#basic-elements
+			.section-container
+				h2 Elemen Dasar
+				
+				h3 Tombol
+				p Belum komplit.
+				ul.buttonList
+					li
+						a.button(href="#")
+							span
+								i.fa.fa-bolt
+								|  Tombol (tautan)
+					li
+						a.button-cta(href="#")
+							span
+								i.fa.fa-heart
+								|  Tombol utama (tautan)
+					li
+						button
+							| Tombol (event/aksi)
+					li
+						button.button-cta
+							| Tombol utama (event/aksi)
+				
+				h3 Isian
+				
+				h4 Input
+				.row
+					.column
+						label
+							input(type="text", placeholder="Jangan taruh teks di placeholder!")
+							div.floating-disclaimer
+								| Kalo teksnya di placeholder ntar nggak kelihatan
+						p
+							| Taruh aja di elemennya sendiri, bisa diatur kok.
+							| Pastikan ada ruang di atas input.
+				
+					.column
+						label(for="inputFloaty")
+							input#inputFloaty(type="text", placeholder=" ")
+							span.floating-placeholder
+								| Input tanpa catatan
+						
+						label(for="inputFloaty2")
+							input#inputFloaty2(type="text", placeholder=" ")
+							span.floating-placeholder
+								| Input dengan catatan.
+							div.floating-disclaimer
+								| NB: Testing terus
+							
+				h4 Checkboxes
+				.row
+					.column
+						label(for="chk1")
+							input#chk1(type="checkbox")
+							span Klik disini
+						label(for="chk2")
+							input#chk2(type="checkbox", checked)
+							span Klik disini
+					.column
+						label(for="chk3")
+							input#chk3(type="checkbox", disabled)
+							span Jangan klik disini
+						label(for="chk4")
+							input#chk4(type="checkbox", disabled, checked)
+							span Jangan klik disini
+				
+		section#advantages
+			.section-container
+				h2 Keuntungan Metode Ini
+				p Website lebih aksesibel dan teratur.
+				p
+					| <em>Semantik</em> artinya memiliki makna. Semantik disini artinya kode HTML bukan
+					|  hanya lempar <code>div</code> dan <code>span</code> seenaknya, namun
+					|  jika diperlukan saja. Kemudian tag-tag heading atau judul itu
+					|  terstruktur sebagaimana membuat sebuah karangan / paper biasa, bukan hanya
+					|  gara-gara teksnya saja yang gede.
+					|  Ini bukan cuma untuk keperluan SEO namun juga aksesibilitas, sebab
+					|  informasi-informasi ini penting untuk diketahui oleh alat macam
+					|  <i>screen-reader</i>.
+				p
+					|  Karena sifat penamaan class CSS yang deskriptif (menjelaskan isi class yang digunakan)
+					|  ketimbang presentatif (menjelaskan tampilan), diharapkan dapat menjadi
+					|  lebih mudah untuk mengganti tampilan sebab kode HTML tidak tergantung
+					|  pada kode CSS. Alasan inilah yang menyebabkan HTML dan CSS menjadi
+					|  teknologi terpisah yang saling melengkapi.
+				p
+					|  Script digunakan untuk <i>melengkapi</i> tampilan dan fungsi website.
+					|  Pada demo ini, script hanya berfungsi untuk mengubah tampilan navbar.
+					|  Secara default, navbar yang ditampilkan tidak terlihat transparan,
+					|  sehingga masih dapat terbaca dalam suasana tanpa javascript.
+				p
+					|  Tampilannya modern, sesuai dengan tren yang sedang berkembang pada
+					|  tahun 2020. Mendukung dark mode yang tersedia pada Chrome versi 74 ke
+					|  atas serta Firefox terbaru. Bersifat responsif tanpa ada script tambahan.
+				p
+					| Demo ini belum selesai, bersifat <em>proof of concept.</em>
+				blockquote
+					p
+						|  Penggunaan kelas presentatif tak ada bedanya dengan praktik
+						|  membuat website pada tahun 90-an.
+					footer
+						| Jason Knight
+					
+		script(type="text/javascript")
+			|	// noscript tidak membuat website sulit dilihat
+			|	var scroll = false;
+			|   var scrollLevel = 0
+			|	var nav = document.getElementById("mainNav");
+			|	nav.classList.add("topofpage");
+			|	window.onscroll = function(){
+			|		scroll = true;
+			|   }
+			|   setInterval( function() {
+			|		scrollLevel = window.scrollY;
+			|		if ( scroll ) {
+			|			if ( scrollLevel >= 10 ){
+			|				nav.classList.remove("topofpage");
+			|			} else {
+			|				nav.classList.add("topofpage");
+			|			}
+			|		}
+			|		scroll = false;
+			|   }, 250);

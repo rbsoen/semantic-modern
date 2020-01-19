@@ -1,0 +1,23 @@
+@media (prefers-color-scheme: dark)
+	%default-dark
+		background-color: #111
+		color: #fff
+	
+	%dark-alt
+		color: #eee
+		background-color: #223
+		
+	body
+		@extend %default-dark
+		
+	#mainNav
+		@extend %default-dark
+		
+	input
+		@extend %default-dark
+	
+	code
+		@extend %dark-alt
+	
+	blockquote
+		@extend %dark-alt

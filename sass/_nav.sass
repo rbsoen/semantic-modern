@@ -1,0 +1,42 @@
+/* navigation styles */
+
+#mainNav
+	background: #fff
+	color: #222
+	box-shadow: 0 0 16px rgba(0,0,0,.3)
+	padding: 10px 48px
+	min-height: 4em
+	display: flex
+	align-items: center
+	justify-content: space-between
+	position: fixed
+	width: 100%
+	top: 0
+	z-index:999
+	transition: .5s
+	
+	&.topofpage
+		/* activated when javascript is on */
+		background: transparent
+		box-shadow: none
+		color: #fff
+		min-height: 6em
+	a
+		color: inherit
+	h1
+		font-size: 1em
+		padding: 0
+
+ul#mainMenu
+	list-style: none
+	display: table
+	display: flex
+	li
+		padding: 0 1.5em
+		display: table-cell
+
+#toggleHamburger, [for="toggleHamburger"]
+	display: none
+
+.menuExpanded
+	display: none

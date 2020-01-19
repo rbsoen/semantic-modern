@@ -1,0 +1,46 @@
+/* default styles */
+
+body
+	font-family: 'Manrope', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
+a
+	text-decoration: none
+
+p
+	padding-bottom: 16px
+	padding-bottom: 1rem
+	line-height: 1.8
+
+code
+	font-family: 'Victor Mono', 'Roboto Mono', 'Courier New', Courier, monospace
+	font-size: inherit
+	background-color: #eee
+	padding:5px
+	
+%heading-common
+	padding: 8px 0
+	padding: .5rem 0
+
+%heading-unbolden
+	//font-weight: 800
+
+h1
+	@extend %heading-common
+	@extend %heading-unbolden
+	font-size: 3em
+	
+h2
+	@extend %heading-common
+	@extend %heading-unbolden
+	font-size: 2.25em
+	+ p
+		/* lead paragraph */
+		font-size: 1.5em
+		opacity: .8
+	
+h3
+	@extend %heading-common
+	@extend %heading-unbolden
+	font-size: 1.5em
+
+h4
+	@extend %heading-common
