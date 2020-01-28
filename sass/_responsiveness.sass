@@ -1,37 +1,50 @@
-@media (max-width: 40em)
-	.menuExpanded
-		display: inline-block
-		margin: 0 .5em
-		
-	[for="toggleHamburger"]
-		display: block
-	
-	#toggleHamburger
-		&:checked
-			+ ul#mainMenu
-				max-height: 999em
-				left: 0
-				transition: left .5s cubic-bezier(0, 1, 0, 1)
-		
-	ul#mainMenu
-		display: block
-		position: absolute
-		top: 0
-		left: -99em
-		padding:0 3em
-		background-color: #fff
-		color: #222
-		height: 100vh
-		overflow-y: scroll
-		box-shadow:8px 0 8px rgba(0,0,0,.3)
-		transition: left .5s ease-in-out
-		li
-			padding: 1em 0
-			display: block
-				
-				
+@media (max-width: $size-very-small)
+	@if variable-exists(_SECTIONS_ENABLED)
+		#hero
+			h2
+				font-size: 2.25em
 
-@media (max-width: 50em)
-	.row, .column
-		display: block
-		width: 100%
+	@if variable-exists(_NAV_ENABLED)
+		#mainNav
+			padding: 5px 0 5px 24px
+
+@media (max-width: $size-small)
+	@if variable-exists(_NAV_ENABLED)
+		.menuExpanded
+			display: inline-block
+			margin: 0 .5em
+
+		[for="toggleHamburger"]
+			display: block
+			padding: 1em
+			margin: 0
+
+		#toggleHamburger
+			&:checked
+				+ ul#mainMenu
+					max-height: 999em
+					left: 0
+					transition: left .5s cubic-bezier(0, 1, 0, 1)
+
+		ul#mainMenu
+			display: block
+			position: absolute
+			top: 0
+			left: -99em
+			padding:0 3em
+			background-color: #fff
+			color: #222
+			height: 100vh
+			overflow-y: scroll
+			box-shadow:8px 0 8px rgba(0,0,0,.3)
+			transition: left .5s ease-in-out
+			li
+				padding: 1em 0
+				display: block
+
+
+@media (max-width: $size-medium)
+	@if variable-exists(_ROW_COL_ENABLED)
+		.row, .column
+			display: block
+			width: 100%

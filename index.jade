@@ -84,9 +84,9 @@ html(lang="en")
 				
 					.column
 						label(for="inputFloaty")
-							input#inputFloaty(type="text", placeholder=" ")
+							input#inputFloaty(type="password", placeholder=" ")
 							span.floating-placeholder
-								| Input without "disclaimer"
+								| Password
 						
 						label(for="inputFloaty2")
 							input#inputFloaty2(type="text", placeholder=" ")
@@ -94,52 +94,70 @@ html(lang="en")
 								| Floating input with "disclaimer"
 							div.floating-disclaimer
 								| Don't make this too long or it'll overflow.
-							
-				h4 Checkboxes
 				.row
 					.column
-						label(for="chk1")
-							input#chk1(type="checkbox")
-							span Tick this
-						label(for="chk2")
-							input#chk2(type="checkbox", checked)
-							span Untick this
+						h4 Checkboxes
+						.row
+							.column
+								label(for="chk1")
+									input#chk1(type="checkbox")
+									span Tick this
+								label(for="chk2")
+									input#chk2(type="checkbox", checked)
+									span Untick this
+							.column
+								label(for="chk3")
+									input#chk3(type="checkbox", disabled)
+									span Can't tick this
+								label(for="chk4")
+									input#chk4(type="checkbox", disabled, checked)
+									span Can't untick this
 					.column
-						label(for="chk3")
-							input#chk3(type="checkbox", disabled)
-							span Can't tick this
-						label(for="chk4")
-							input#chk4(type="checkbox", disabled, checked)
-							span Can't untick this
-				
-				//
-					h4 Radio Buttons
-					.inputContainer
-						label(for="rd1") Tick this
-						input#chk1(type="radio", name="testRadio")
-					.inputContainer
-						label(for="rd2") Untick this
-						input#chk2(type="radio", name="testRadio", checked)
-					.inputContainer
-						label(for="rd3") Can't tick this
-						input#chk3(type="radio", name="testRadio", disabled)
-					.inputContainer
-						label(for="rd4") Can't untick this
-						input#chk4(type="radio", name="testRadio", disabled, checked)
-					
-					h4 Toggle Buttons
-					.inputContainer
-						label(for="chk4") Tick this
-						input.toggleButton#chk4(type="checkbox")
-					.inputContainer
-						label(for="chk5") Untick this
-						input.toggleButton#chk5(type="checkbox", checked)
-					.inputContainer
-						label(for="chk6") Can't tick this
-						input.toggleButton#chk6(type="checkbox", disabled)
-					.inputContainer
-						label(for="chk7") Can't untick this
-						input.toggleButton#chk7(type="checkbox", disabled, checked)
+						h4 Radio Buttons
+						.row
+							.column
+								label(for="rd1")
+									input#chk1(type="radio", name="testRadio")
+									span Tick this
+								label(for="rd2")
+									input#chk2(type="radio", name="testRadio", checked)
+									span Or this
+							.column
+								label(for="rd3")
+									input#chk3(type="radio", name="testRadio2", disabled)
+									span Can't tick this
+								label(for="rd4")
+									input#chk4(type="radio", name="testRadio2", disabled, checked)
+									span Nor this
+				.row
+					.column
+						h4 Toggle Buttons
+						.row
+							.column
+								label(for="toggle1")
+									input.toggle#toggle1(type="checkbox")
+									span Tick this
+								label(for="toggle2")
+									input.toggle#toggle2(type="checkbox", checked)
+									span Untick this
+							.column
+								label(for="toggle3")
+									input.toggle#toggle3(type="checkbox", disabled)
+									span Can't tick this
+								label(for="toggle4")
+									input.toggle#toggle4(type="checkbox", disabled, checked)
+									span Can't untick this
+					.column
+						h4 Textarea
+						.row
+							.column
+								label(for="area")
+									textarea#area(placeholder=" " rows=4)
+									span.floating-placeholder
+										| Floating input with "disclaimer"
+									div.floating-disclaimer
+										| Don't make this too long or it'll overflow.
+
 		section#lorem-ipsum
 			.section-container
 				h2 Lorem Ipsum

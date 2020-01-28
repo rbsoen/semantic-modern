@@ -1,4 +1,16 @@
+$_INPUTS_ENABLED: 1
+
 /* input styles */
+
+%disable-native-styling
+	-moz-appearance: none
+	-webkit-appearance: none
+	appearance: none
+	outline: none
+
+%input-size
+	min-height: 1.5em
+	min-width: 1.5em
 
 label
 	/* this acts as a container */
@@ -11,7 +23,7 @@ label
 		display: inline-block
 	span
 		margin-left: .3em
-	
+
 .floating-placeholder
 	/* floating input styles, continued in input:placeholder-shown */
 	cursor: text
@@ -20,7 +32,7 @@ label
 	transition: .3s
 	opacity: .8
 	/* active state by default */
-	top: -1.6em
+	top: -1.9em
 	left: 0
 	font-size: .8em
 
@@ -34,11 +46,10 @@ label
 	font-size: .8em
 	padding-top:1em
 	/* active state by default */
-	top: 1.5em
 	opacity: 1
+	bottom: -1em
 
-input
-	&[type=text]
+%common-text-input
 		cursor: text
 		width: 100%
 		font: inherit
@@ -46,33 +57,41 @@ input
 		margin-bottom: 1em
 		border: 0
 		border-bottom: 2px solid grey
-		
+		background-color: #f0f0f0
+		padding:.2em
+
+		// placeholder
 		&:placeholder-shown
 			~ .floating-disclaimer
-				top: 1em
+				bottom: 0
 				opacity: 0
 			~ .floating-placeholder
-				top: 0
+				top: .2em
+				left: .2em
 				font-size: 1em
-				
+
+textarea
+	@extend %common-text-input
+
+input
+	&[type=text]
+		@extend %common-text-input
+
+	&[type=password]
+		@extend %common-text-input
+
 	&[type=checkbox]
 		/* checkboxes are really tricky */
-		-moz-appearance: none
-		-webkit-appearance: none
-		appearance: none
-		outline: none
-		min-height: 1.5em
-		min-width: 1.5em
+		@extend %disable-native-styling
+		@extend %input-size
 		background-color: #fff
 		border: 1px solid #067
 		border-radius: 4px
 		position: relative
 		transition: .4s
 		cursor: pointer
-		
 		&:disabled
 			opacity: .4
-		
 		&:before
 			content: '\2713' // checkmark symbol
 			display: block
@@ -85,9 +104,45 @@ input
 			font-size: 0
 			transition: .2s // pseudoelement transitions != element transitions
 			transform: scaleY(0)
-		
 		&:checked
 			background-color: #067
 			&:before
 				font-size: 1em
 				transform: scaleY(1)
+		/* separate toggle button */
+		&.toggle
+			min-height: 1em
+			min-width: 3em
+			margin-right:1em
+			border-radius: 1em
+			&:before
+				content: '' // circle
+				position: absolute
+				width: 1em
+				height: 1em
+				font-size: 1.5em
+				top: -.2em
+				left: 0
+				border-radius: 100%
+				transform: scaleY(1)
+				background-color: #067
+			&:checked
+				&:before
+					left: (3em-2em)
+					background-color: #fff
+					border: 1px solid #067
+
+	&[type=radio]
+		/* so are radio buttons */
+		@extend %disable-native-styling
+		@extend %input-size
+		background-color: #fff
+		border: 1px solid #067
+		border-radius: 100%
+		position: relative
+		transition: .2s
+		cursor: pointer
+		&:disabled
+			opacity: .4
+		&:checked
+			background-color: #067

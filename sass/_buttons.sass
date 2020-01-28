@@ -1,3 +1,5 @@
+$_BUTTONS_ENABLED: 1
+
 /* button styles */
 
 .buttonList
@@ -6,12 +8,13 @@
 		display: inline-block
 
 %button-style
-	padding: .75em 1.875em 
+	padding: .75em 1.875em
 	display: inline-block
 	border: 1px solid rgba(128,128,128,.4)
 	border-radius: 4px
 	font-size: .8em
 	font-family: inherit
+	margin: .5em .5em .5em 0
 
 button
 	@extend %button-style
@@ -20,7 +23,7 @@ button
 
 .button
 	@extend button
-	
+
 .button-cta
 	@extend %button-style
 	color: #fff
