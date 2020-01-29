@@ -14,8 +14,8 @@ code
 	font-family: 'Victor Mono', 'Roboto Mono', 'Courier New', Courier, monospace
 	font-size: inherit
 	background-color: #eee
-	padding:5px
-	
+	padding: 5px
+
 %heading-common
 	padding: 8px 0
 	padding: .5rem 0
@@ -25,12 +25,12 @@ code
 
 h1
 	@extend %heading-common
-	@extend %heading-unbolden
+	@extend %heading-unbolden !optional
 	font-size: 3em
 	
 h2
 	@extend %heading-common
-	@extend %heading-unbolden
+	@extend %heading-unbolden !optional
 	font-size: 2.25em
 	+ p
 		/* lead paragraph */
@@ -39,7 +39,7 @@ h2
 	
 h3
 	@extend %heading-common
-	@extend %heading-unbolden
+	@extend %heading-unbolden !optional
 	font-size: 1.5em
 
 h4
